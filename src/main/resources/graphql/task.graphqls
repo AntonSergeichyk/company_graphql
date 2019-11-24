@@ -1,0 +1,13 @@
+type Task {
+    id: ID!
+    name: String!
+    employees: [Employee]!
+}
+
+extend type Query {
+    findTaskById(id: ID): Task
+}
+
+extend type Mutation {
+    createTask(task: Task): Task
+}

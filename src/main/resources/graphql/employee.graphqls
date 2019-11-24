@@ -1,0 +1,26 @@
+type Employee {
+    id: ID!
+    name: String!
+    gender: Gender
+    homeAddress: Address!
+    tasks: [Task]!
+    bookId: Integer
+}
+
+enum Gender{
+     MALE,
+     FEMALE
+}
+
+type Employee {
+    number: String!
+    street: String!
+}
+
+extend type Query {
+    findEmployeeById(id: ID): Employee
+}
+
+extend type Mutation {
+    createEmployee(employee: Employee): Employee
+}

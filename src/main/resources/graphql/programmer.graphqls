@@ -1,0 +1,12 @@
+type Programmer {
+    id: ID!
+    miting: Miting!
+}
+
+extend type Query {
+    findProgrammerById(id: ID): Programmer
+}
+
+extend type Mutation {
+    createProgrammer(programmer: Programmer): Programmer
+}

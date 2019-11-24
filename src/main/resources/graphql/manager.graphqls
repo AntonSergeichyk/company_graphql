@@ -1,0 +1,12 @@
+type Manager {
+    id: ID!
+    project: Project!
+}
+
+extend type Query {
+    findManagerById(id: ID): Manager
+}
+
+extend type Mutation {
+    createManager(manager: Manager): Manager
+}

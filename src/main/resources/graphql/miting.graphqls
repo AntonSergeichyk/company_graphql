@@ -1,0 +1,13 @@
+type Miting {
+    id: ID!
+    name: String!
+    programmers: [Programmer]!
+}
+
+extend type Query {
+    findMitingById(id: ID): Miting
+}
+
+extend type Mutation {
+    createMiting(miting: Miting): Miting
+}
