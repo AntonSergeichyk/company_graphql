@@ -2,6 +2,7 @@ package com.example.demo.resolver.mutation;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.demo.model.Miting;
+import com.example.demo.model.input.MitingInput;
 import com.example.demo.resolver.MitingResolver;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class MitingMutationResolver implements GraphQLMutationResolver {
     @Autowired
     private MitingResolver mitingResolver;
 
-    public Miting createManager(Miting miting) {
+    public Miting createMiting(MitingInput miting) {
         return mitingResolver.create(miting);
     }
 }

@@ -2,6 +2,7 @@ package com.example.demo.resolver.mutation;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.example.demo.model.Manager;
+import com.example.demo.model.input.ManagerInput;
 import com.example.demo.resolver.ManagerResolver;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,7 @@ public class ManagerMutationResolver implements GraphQLMutationResolver {
     @Autowired
     private ManagerResolver managerResolver;
 
-    public Manager createManager(Manager manager) {
+    public Manager createManager(ManagerInput manager) {
         return managerResolver.create(manager);
     }
 }

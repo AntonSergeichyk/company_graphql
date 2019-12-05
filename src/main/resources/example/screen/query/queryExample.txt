@@ -1,0 +1,84 @@
+{
+findTaskById(id:"1"){
+  id,
+  name
+}
+  }
+
+
+  {
+  findProjectById(id:"1"){
+    id,
+    name
+  }
+    }
+
+
+{
+ findMitingById(id:"1"){
+  id,
+  name
+}
+}
+
+
+{
+findEmployeeById(id:"1"){
+  id,
+  name,
+  gender,
+  homeAddress{
+    number,
+    street
+  },
+  bookId
+  tasks{
+    id,
+    name
+  }
+}
+}
+
+
+{
+findManagerById(id:"2"){
+  id,
+  project {
+    id,
+    name
+  },
+  name,
+  gender,
+  homeAddress{
+    number,
+    street
+  },
+  bookId,
+  tasks{
+    id,
+    name
+  }
+}
+}
+
+
+{
+findProgrammerById(id:"1"){
+  id,
+   miting{
+    id,
+    name
+  },
+  name,
+  gender,
+  homeAddress{
+    number,
+    street
+  },
+  bookId,
+  tasks{
+    id,
+    name
+  }
+}
+}

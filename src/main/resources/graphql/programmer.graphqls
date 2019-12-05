@@ -1,6 +1,20 @@
 type Programmer {
     id: ID!
+    name: String!
+    gender: Gender
+    homeAddress: Address!
+    tasks: [Task]!
+    bookId: Int
     miting: Miting!
+}
+
+input ProgrammerInput {
+    name: String!
+    gender: Gender
+    homeAddress: AddressInput!
+    taskIds: [Long]
+    bookId: Int
+    mitingId: Long!
 }
 
 extend type Query {
@@ -8,5 +22,5 @@ extend type Query {
 }
 
 extend type Mutation {
-    createProgrammer(programmer: Programmer): Programmer
+    createProgrammer(programmer: ProgrammerInput): Programmer
 }

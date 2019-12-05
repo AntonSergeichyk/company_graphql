@@ -4,7 +4,15 @@ type Employee {
     gender: Gender
     homeAddress: Address!
     tasks: [Task]!
-    bookId: Integer
+    bookId: Int
+}
+
+input EmployeeInput {
+    name: String!
+    gender: Gender
+    homeAddress: AddressInput!
+    taskIds: [Long]
+    bookId: Int
 }
 
 enum Gender{
@@ -12,7 +20,12 @@ enum Gender{
      FEMALE
 }
 
-type Employee {
+type Address {
+    number: String!
+    street: String!
+}
+
+input AddressInput {
     number: String!
     street: String!
 }
@@ -22,5 +35,5 @@ extend type Query {
 }
 
 extend type Mutation {
-    createEmployee(employee: Employee): Employee
+    createEmployee(employee: EmployeeInput): Employee
 }

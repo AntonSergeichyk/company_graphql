@@ -4,10 +4,14 @@ type Project {
        managers: [Manager]!
    }
 
+   input ProjectInput {
+          name: String!
+      }
+
    extend type Query {
        findProjectById(id: ID): Project
    }
 
    extend type Mutation {
-       createProject(project: Project): Project
+       createProject(project: ProjectInput): Project
    }

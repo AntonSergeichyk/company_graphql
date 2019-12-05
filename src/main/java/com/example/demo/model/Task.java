@@ -1,9 +1,6 @@
 package com.example.demo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,10 +10,12 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import java.util.Set;
 
-@Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
+@ToString(exclude = "employees")
+@Builder
 @Entity
 @Table(name = "task", schema = "company")
 public class Task extends BaseEntity<Long>{

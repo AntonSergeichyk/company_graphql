@@ -1,13 +1,17 @@
 type Miting {
-    id: ID!
-    name: String!
-    programmers: [Programmer]!
-}
+     id: ID!
+     name: String!
+     programmers: [Programmer]!
+ }
+
+ input MitingInput {
+     name: String!
+ }
 
 extend type Query {
     findMitingById(id: ID): Miting
 }
 
 extend type Mutation {
-    createMiting(miting: Miting): Miting
+    createMiting(miting: MitingInput): Miting
 }

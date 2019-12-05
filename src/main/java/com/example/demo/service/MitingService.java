@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Miting;
+import com.example.demo.model.input.MitingInput;
 import com.example.demo.repository.MitingRepository;
 import lombok.AllArgsConstructor;
 import org.hibernate.ObjectNotFoundException;
@@ -14,8 +15,10 @@ public class MitingService {
     @Autowired
     private MitingRepository mitingRepository;
 
-    public Miting create(Miting miting) {
-        return mitingRepository.save(miting);
+    public Miting create(MitingInput mitingInput) {
+        return mitingRepository.save(Miting.builder()
+                                .name(mitingInput.getName())
+                                .build());
     }
 
     public Miting get(Long mitingId) {

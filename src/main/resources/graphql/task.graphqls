@@ -1,7 +1,11 @@
 type Task {
-    id: ID!
+     id: ID!
+     name: String!
+     employees: [Employee]!
+ }
+
+input TaskInput {
     name: String!
-    employees: [Employee]!
 }
 
 extend type Query {
@@ -9,5 +13,5 @@ extend type Query {
 }
 
 extend type Mutation {
-    createTask(task: Task): Task
+    createTask(task: TaskInput): Task
 }

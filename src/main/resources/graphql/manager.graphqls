@@ -1,6 +1,20 @@
 type Manager {
-    id: ID!
-    project: Project!
+     id: ID!
+     name: String!
+     gender: Gender
+     homeAddress: Address!
+     tasks: [Task]!
+     bookId: Int
+     project: Project!
+}
+
+input ManagerInput {
+    name: String!
+    gender: Gender
+    homeAddress: AddressInput!
+    taskIds: [Long]
+    bookId: Int
+    projectId: Long!
 }
 
 extend type Query {
@@ -8,5 +22,5 @@ extend type Query {
 }
 
 extend type Mutation {
-    createManager(manager: Manager): Manager
+    createManager(manager: ManagerInput): Manager
 }
